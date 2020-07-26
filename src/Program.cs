@@ -9,6 +9,7 @@ namespace ShipCore
             Terrain.Terrain terrain = new Terrain.Terrain((10, 10));
             terrain.UpdateCell((5, 5), 3, HeightUpdateMethod.SET);
             terrain.LogTerrain();
+            terrain.SaveTerrain("terrain");
         }
     }
 }

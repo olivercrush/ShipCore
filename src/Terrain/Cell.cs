@@ -1,6 +1,8 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ShipCore.Terrain
 {
@@ -21,6 +23,13 @@ namespace ShipCore.Terrain
             _position = position;
         }
 
+        public JObject ToJsonObject()
+        {
+            return new JObject(
+                new JProperty("id", _id),
+                new JProperty("position", _position.ToJsonObject())
+            );
+        }
 
         public void SetCellHeight(int height)
         {
@@ -43,6 +52,15 @@ namespace ShipCore.Terrain
             X = x;
             Y = y;
             H = h;
+        }
+
+        public JObject ToJsonObject()
+        {
+            return new JObject(
+                new JProperty("x", X),    
+                new JProperty("y", Y),    
+                new JProperty("h", H)
+            );
         }
     }
 

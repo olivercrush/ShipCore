@@ -1,4 +1,8 @@
 using System;
+using System.IO;
+using System.Net;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ShipCore.Terrain
 {
@@ -14,7 +18,21 @@ namespace ShipCore.Terrain
 
         public void SaveTerrain(String name)
         {
+            JObject[] jsonCells = new JObject[_cells.Length];
+            for (int y = 0; y < _cells.GetLength(1); y++) {
+                for (int x = 0; x < _cells.GetLength(0); x++)
+                {
+                    jsonCells[y * _cells.GetLength(0) + x] = _cells[x, y].ToJsonObject();
+                }
+            }
             
+            JObject jsonTerrain = new JObject(
+                new JProperty("name", name),
+                new JProperty("cells", jsonCells)
+            );
+            
+            File.WriteAllText("terrains/" + name + ".json", jsonTerrain.ToString());
+            Console.Write(name + ".json saved in terrains directory");
         }
 
         private void GenerateTerrain((int w, int h) dimensions) {
