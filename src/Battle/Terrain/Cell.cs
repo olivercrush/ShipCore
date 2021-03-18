@@ -1,10 +1,11 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using ShipCore.Battle.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace ShipCore.Terrain
+namespace ShipCore.Battle.Terrain
 {
     public class Cell
     {
@@ -40,27 +41,6 @@ namespace ShipCore.Terrain
         public int GetCellHeight()
         {
             return _position.H;
-        }
-    }
-
-    public readonly struct Position {
-        public int X { get; }
-        public int Y { get; }
-        public int H { get; }
-
-        public Position(int x, int y, int h) {
-            X = x;
-            Y = y;
-            H = h;
-        }
-
-        public JObject ToJsonObject()
-        {
-            return new JObject(
-                new JProperty("x", X),    
-                new JProperty("y", Y),    
-                new JProperty("h", H)
-            );
         }
     }
 

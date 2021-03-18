@@ -3,17 +3,27 @@ using System.IO;
 using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ShipCore.Battle.Utils;
 
-namespace ShipCore.Terrain
+namespace ShipCore.Battle.Terrain
 {
-    // TODO#002 : Check this stuff for json save https://www.newtonsoft.com/json/help/html/WriteToJsonFile.htm
+    // TODO#3: Load terrain from json file 
     
     public class Terrain {
+
+        private Guid _id;
+        public Guid Id => _id;
+
         private Cell[,] _cells;
         public Cell[,] Cells => _cells;
 
         public Terrain((int w, int h) dimensions) {
+            _id = Guid.NewGuid();
             GenerateTerrain(dimensions);
+        }
+
+        public Terrain(String name) {
+            // [3]
         }
 
         public void SaveTerrain(String name)
@@ -25,14 +35,16 @@ namespace ShipCore.Terrain
                     jsonCells[y * _cells.GetLength(0) + x] = _cells[x, y].ToJsonObject();
                 }
             }
-            
+
+            // DOC : https://www.newtonsoft.com/json/help/html/WriteToJsonFile.htm
             JObject jsonTerrain = new JObject(
                 new JProperty("name", name),
+                new JProperty("id", _id.ToString()),
                 new JProperty("cells", jsonCells)
             );
             
             File.WriteAllText("terrains/" + name + ".json", jsonTerrain.ToString());
-            Console.Write(name + ".json saved in terrains directory");
+            Console.Write(name + ".json saved in terrains directory \n");
         }
 
         private void GenerateTerrain((int w, int h) dimensions) {
@@ -67,14 +79,16 @@ namespace ShipCore.Terrain
             }
         }
 
-        public void LogTerrain() {
+        public override String ToString() {
+            String terrainStr = "Terrain #" + _id.ToString() + "\n";
             for (int y = 0; y < _cells.GetLength(1); y++) {
-                Console.Write(" ");
+                terrainStr += "\t";
                 for (int x = 0; x < _cells.GetLength(0); x++) {
-                    Console.Write(_cells[x,y].GetCellHeight() + " ");
+                    terrainStr += _cells[x,y].GetCellHeight() + " ";
                 }
-                Console.Write("\n");
+                terrainStr += "\n";
             }
+            return terrainStr;
         }
     }
 

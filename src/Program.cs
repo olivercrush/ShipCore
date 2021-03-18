@@ -1,4 +1,5 @@
-﻿using ShipCore.Terrain;
+﻿using ShipCore.Battle.Terrain;
+using ShipCore.Battle.Entity;
 
 namespace ShipCore
 {
@@ -6,9 +7,9 @@ namespace ShipCore
     {
         public static void Main(string[] args)
         {
-            Terrain.Terrain terrain = new Terrain.Terrain((10, 10));
+            Terrain terrain = new Terrain((10, 10));
             terrain.UpdateCell((5, 5), 3, HeightUpdateMethod.SET);
-            terrain.LogTerrain();
+            terrain.ToString();
             terrain.SaveTerrain("terrain");
         }
     }
