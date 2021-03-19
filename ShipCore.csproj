@@ -42,9 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Battle\Entity\Character.cs" />
+    <Compile Include="src\Battle\Entity\CharacteristicsContainer.cs" />
     <Compile Include="src\Battle\Entity\Entity.cs" />
     <Compile Include="src\Battle\Utils\Position.cs" />
-    <Compile Include="src\Program.cs" />
     <Compile Include="src\Battle\Terrain\Cell.cs" />
     <Compile Include="src\Battle\Terrain\Terrain.cs" />
   </ItemGroup>

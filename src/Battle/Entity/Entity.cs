@@ -9,10 +9,10 @@ namespace ShipCore.Battle.Entity
 {
     public class Entity
     {
-        private Guid _id;
+        protected Guid _id;
         public Guid Id => _id;
 
-        private Position _position;
+        protected Position _position;
         public Position Position => _position;
 
         public Entity(Position position)
@@ -24,7 +24,7 @@ namespace ShipCore.Battle.Entity
         public override String ToString()
         {
             String entityStr = "Entity #" + _id.ToString() + " \n";
-            entityStr += "\t Position : " + _position.ToString() + "\n";
+            entityStr += "\t Position | " + _position.ToString() + "\n";
             return entityStr;
         }
     }

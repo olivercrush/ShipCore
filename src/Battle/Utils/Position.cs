@@ -30,7 +30,7 @@ namespace ShipCore.Battle.Utils
             );
         }
 
-        public String ToString()
+        public override String ToString()
         {
             return ("x : " + X + ", y : " + Y + ", h : " + H);
         }
