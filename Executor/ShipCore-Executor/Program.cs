@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ShipCore.Battle.Terrain;
-using ShipCore.Battle.Entity;
+using ShipCore.Battle.Terrains;
+using ShipCore.Battle.Entities;
 using ShipCore.Battle.Utils;
 
 namespace ShipCore_Executor
@@ -23,7 +23,7 @@ namespace ShipCore_Executor
             Console.WriteLine(entity.ToString());
             Console.WriteLine("");
 
-            Characteristics characteristics = new Characteristics(10, 0, 0, 2, 100);
+            Characteristics characteristics = new Characteristics(10, 2, 100);
             Character character = new Character(new Position(0, 0, 0), characteristics);
             Console.WriteLine(character.ToString());
             Console.WriteLine("");

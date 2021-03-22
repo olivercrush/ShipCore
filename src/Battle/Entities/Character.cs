@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ShipCore.Battle.Utils;
 
-namespace ShipCore.Battle.Entity
+namespace ShipCore.Battle.Entities
 {
     public class Character : Entity
     {

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using ShipCore.Battle.Utils;
 
-namespace ShipCore.Battle.Entity
+namespace ShipCore.Battle.Entities
 {
-    public class Entity
+    public abstract class Entity
     {
         protected Guid _id;
         public Guid Id => _id;

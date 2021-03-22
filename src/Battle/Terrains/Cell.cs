@@ -5,7 +5,7 @@ using ShipCore.Battle.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace ShipCore.Battle.Terrain
+namespace ShipCore.Battle.Terrains
 {
     public class Cell
     {

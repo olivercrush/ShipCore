@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ShipCore.Battle.Utils;
 
-namespace ShipCore.Battle.Terrain
+namespace ShipCore.Battle.Terrains
 {
     // TODO#3: Load terrain from json file 
     
