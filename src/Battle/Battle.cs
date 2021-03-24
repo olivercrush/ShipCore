@@ -13,15 +13,11 @@ namespace ShipCore.Battle
         private Entity[] _entities;
         private Terrain _terrain;
 
-        private bool _isOver;
-        private EntityColor _turnPlayer;
-        private EntityColor _actionPlayer;
 
         public Battle(Entity[] entities)
         {
             _entities = entities;
             _terrain = new Terrain((20, 20));
-            _isOver = false;
         }
 
         public Battle(Entity[] entities, Terrain terrain)
@@ -30,12 +26,19 @@ namespace ShipCore.Battle
             _terrain = terrain;
         }
 
-        public void RunBattle()
+
+        public bool CheckGameOver()
         {
-            while (!_isOver)
+            int countRed = 0;
+            int countBlue = 0;
+
+            foreach (Entity e in _entities)
             {
-                // game loop
+                countRed += (e.Color == EntityColor.RED) ? 1 : 0;
+                countBlue += (e.Color == EntityColor.BLUE) ? 1 : 0;
             }
+
+            return (countRed == 0) || (countBlue == 0);
         }
     }
 }
