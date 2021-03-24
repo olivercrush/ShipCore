@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Battle\Actions\Action.cs" />
+    <Compile Include="src\Battle\Actions\Movement.cs" />
+    <Compile Include="src\Battle\Battle.cs" />
+    <Compile Include="src\Battle\Effects\EffectTarget.cs" />
     <Compile Include="src\Battle\Entities\Character.cs" />
     <Compile Include="src\Battle\Entities\CharacteristicsContainer.cs" />
     <Compile Include="src\Battle\Effects\Effect.cs" />
@@ -50,6 +53,7 @@
     <Compile Include="src\Battle\Utils\Position.cs" />
     <Compile Include="src\Battle\Terrains\Cell.cs" />
     <Compile Include="src\Battle\Terrains\Terrain.cs" />
+    <Compile Include="src\Battle\Utils\Target.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="libraries\" />

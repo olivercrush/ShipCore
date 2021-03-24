@@ -15,17 +15,30 @@ namespace ShipCore.Battle.Entities
         protected Position _position;
         public Position Position => _position;
 
-        public Entity(Position position)
+        protected EntityColor _color;
+        public EntityColor Color => _color;
+
+        public Entity(Position position, EntityColor color)
         {
             _id = Guid.NewGuid();
             _position = position;
+            _color = color;
         }
 
         public override String ToString()
         {
             String entityStr = "Entity #" + _id.ToString() + " \n";
             entityStr += "\t Position | " + _position.ToString() + "\n";
+            entityStr += "\t Color | " + _color.ToString() + "\n";
             return entityStr;
         }
+    }
+
+    public enum EntityColor
+    {
+        BLUE,
+        RED,
+        WHITE,
+        BLACK
     }
 }

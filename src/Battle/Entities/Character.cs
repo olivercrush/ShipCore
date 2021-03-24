@@ -11,7 +11,7 @@ namespace ShipCore.Battle.Entities
     {
         public CharacteristicsContainer CharacteristicsContainer;
 
-        public Character(Position position, Characteristics characteristics) : base(position)
+        public Character(Position position, EntityColor color, Characteristics characteristics) : base(position, color)
         {
             CharacteristicsContainer = new CharacteristicsContainer(characteristics);
         }
@@ -20,6 +20,7 @@ namespace ShipCore.Battle.Entities
         {
             String characterStr = "Entity (Character) #" + _id.ToString() + " \n";
             characterStr += "\t Position | " + _position.ToString() + "\n";
+            characterStr += "\t Color | " + _color.ToString() + "\n";
             characterStr += "\t Characteristics | " + CharacteristicsContainer.GetCharacteristics().ToString() + "\n";
             return characterStr;
         }

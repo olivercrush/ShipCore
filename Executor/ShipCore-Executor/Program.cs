@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ShipCore.Battle.Terrains;
-using ShipCore.Battle.Entities;
-using ShipCore.Battle.Utils;
+using ShipCore.Battle;
 
 namespace ShipCore_Executor
 {
@@ -19,14 +17,14 @@ namespace ShipCore_Executor
             terrain.SaveTerrain("terrain");
             Console.WriteLine("");*/
 
-            Entity entity = new Entity(new Position(0, 0, 0));
+            /*Entity entity = new Entity(new Position(0, 0, 0));
             Console.WriteLine(entity.ToString());
-            Console.WriteLine("");
+            Console.WriteLine("");*/
 
-            Characteristics characteristics = new Characteristics(10, 2, 100);
+            /*Characteristics characteristics = new Characteristics(10, 2, 100);
             Character character = new Character(new Position(0, 0, 0), characteristics);
             Console.WriteLine(character.ToString());
-            Console.WriteLine("");
+            Console.WriteLine("");*/
 
             Console.WriteLine("Press key to stop program...");
             Console.ReadKey();

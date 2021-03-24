@@ -7,7 +7,7 @@ using ShipCore.Battle.Entities;
 
 namespace ShipCore.Battle.Actions
 {
-    public class Action
+    public abstract class Action
     {
         private Entity _trigger;
         private Entity[] _targets;
@@ -20,23 +20,7 @@ namespace ShipCore.Battle.Actions
             _type = type;
         }
 
-        public void ResolveAction()
-        {
-            switch (_type)
-            {
-                case ActionType.MOVEMENT:
-                    // move
-                    break;
-
-                case ActionType.ATTACK:
-                    // attack
-                    break;
-
-                case ActionType.SKILL:
-                    // skill
-                    break;
-            }
-        }
+        public abstract void ResolveAction();
 
         public enum ActionType
         {
