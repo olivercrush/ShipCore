@@ -51,6 +51,7 @@
     <Compile Include="src\Battle\Effects\Effect.cs" />
     <Compile Include="src\Battle\Entities\Entity.cs" />
     <Compile Include="src\Battle\Turn.cs" />
+    <Compile Include="src\Battle\Utils\ActionStringInterpreter.cs" />
     <Compile Include="src\Battle\Utils\Position.cs" />
     <Compile Include="src\Battle\Terrains\Cell.cs" />
     <Compile Include="src\Battle\Terrains\Terrain.cs" />

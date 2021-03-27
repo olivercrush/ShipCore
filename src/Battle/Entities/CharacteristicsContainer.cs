@@ -37,8 +37,6 @@ namespace ShipCore.Battle.Entities
         }
 
         public void UpdateHealth(UpdateMethod updateMethod, int value) { _health = (updateMethod == UpdateMethod.SET) ? value : _health + value ; }
-        public void UpdateMobility(UpdateMethod updateMethod, int value) { _mobility = (updateMethod == UpdateMethod.SET) ? value : _mobility + value ; }
-        public void UpdateInitiative(UpdateMethod updateMethod, int value) { _initiative = (updateMethod == UpdateMethod.SET) ? value : _initiative + value ; }
     }
 
     public enum UpdateMethod

@@ -18,7 +18,7 @@ namespace ShipCore_Executor
             terrain.SaveTerrain("terrain");
             Console.WriteLine("");*/
 
-            /*Entity entity = new Entity(new Position(0, 0, 0));
+            /*Entity entity = new Entity(new Position(0, 0, 0), EntityColor.WHITE);
             Console.WriteLine(entity.ToString());
             Console.WriteLine("");*/
 
@@ -26,6 +26,8 @@ namespace ShipCore_Executor
             Character character = new Character(new Position(0, 0, 0), EntityColor.BLUE, characteristics);
             Console.WriteLine(character.ToString());
             Console.WriteLine("");
+
+            ActionStringInterpreter.IsStringValid(character.Id.ToString() + ":ACTION:(0,0):PARAM1:PARAM2");
 
             Console.WriteLine("Press key to stop program...");
             Console.ReadKey();
