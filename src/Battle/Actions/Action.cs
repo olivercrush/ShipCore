@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ShipCore.Battle.Entities;
+using ShipCore.Battle.Utils;
 
 namespace ShipCore.Battle.Actions
 {
     public abstract class Action
     {
         private Entity _trigger;
-        private Entity[] _targets;
+        private Target[] _targets;
         private ActionType _type;
 
-        public Action(Entity trigger, Entity[] targets, ActionType type)
+        public Action(Entity trigger, Target[] targets, ActionType type)
         {
             _trigger = trigger;
             _targets = targets;
