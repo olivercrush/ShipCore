@@ -37,16 +37,16 @@ namespace ShipCore.Battle
         private void InitialiseBattle()
         {
             _redFirst = (new Random().Next(0, 2)) >= 1;
-            CreateTurn((_redFirst) ? EntityColor.RED : EntityColor.BLUE);
+            _turns.Add(new Turn((_redFirst) ? EntityColor.RED : EntityColor.BLUE));
         }
 
-        private void CreateTurn(EntityColor player)
+        private void EndTurn()
         {
-            Turn turn = new Turn(player);
-            _turns.Add(turn);
+            EntityColor turnPlayer = _turns[_turns.Count - 1].GetPlayer();
+            _turns.Add(new Turn((turnPlayer == EntityColor.RED) ? EntityColor.BLUE : EntityColor.RED));
         }
 
-        public bool CheckGameOver()
+        private bool CheckGameOver()
         {
             int countRed = 0;
             int countBlue = 0;

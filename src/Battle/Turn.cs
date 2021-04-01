@@ -18,5 +18,10 @@ namespace ShipCore.Battle
             _player = player;
             _actions = new List<Actions.Action>();
         }
+
+        public EntityColor GetPlayer()
+        {
+            return _player;
+        }
     }
 }
