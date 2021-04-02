@@ -22,8 +22,10 @@ namespace ShipCore.Battle
             return _battle;
         }
 
-        public void GetUserInput()
+        public void ProcessUserInput(String input)
         {
+            if (!ActionStringInterpreter.IsStringValid(input)) throw new Exception("Input string invalid");
+
 
         }
 

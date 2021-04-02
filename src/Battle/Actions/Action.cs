@@ -22,12 +22,27 @@ namespace ShipCore.Battle.Actions
         }
 
         public abstract void ResolveAction();
+    }
 
-        public enum ActionType
+    public struct ActionStruct
+    {
+        public String EntityID { get; }
+        public String[] Targets { get; }
+        public ActionType ActionType { get; }
+
+        public ActionStruct(String entityId, String[] targets, ActionType type)
         {
-            MOVEMENT,
-            ATTACK,
-            SKILL
+            EntityID = entityId;
+            Targets = targets;
+            ActionType = type;
         }
+    }
+
+    public enum ActionType
+    {
+        MOVEMENT,
+        ATTACK,
+        SKILL,
+        NONE
     }
 }

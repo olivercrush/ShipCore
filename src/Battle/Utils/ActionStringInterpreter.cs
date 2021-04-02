@@ -4,12 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using ShipCore.Battle.Actions;
 
 namespace ShipCore.Battle.Utils
 {
     public static class ActionStringInterpreter
     {
         private const bool DEBUG_MODE = false;
+
+        public static ActionStruct ConvertInputToActionStruct(String str)
+        {
+            String[] parts = str.Split(':');
+
+            ActionStruct actionStruct = new ActionStruct(parts[0], parts[2].Split(','), ConvertStringToActionType(parts[1]));
+            return actionStruct;
+        }
+
+        private static ActionType ConvertStringToActionType(String str)
+        {
+            switch (str)
+            {
+                case "MOVEMENT":
+                    return ActionType.MOVEMENT;
+
+                case "ATTACK":
+                    return ActionType.ATTACK;
+
+                case "SKILL":
+                    return ActionType.SKILL;
+
+                default:
+                    return ActionType.NONE;
+            }
+        }
 
         public static bool IsStringValid(String str)
         {
